@@ -1,9 +1,11 @@
 function setItem() {
-	localStorage.setItem("catch", ["wartortle", "squirtle", "metapod"]);
+	const data = ["wartortle", "squirtle", "metapod"];
+	localStorage.setItem("catch", JSON.stringify(data));
 }
 
-function getItem(item) {
-	localStorage.getItem(item);
+function getItem(key) {
+	const value = localStorage.getItem(key);
+	return value ? JSON.parse(value) : [];
 }
 
 export { setItem, getItem };

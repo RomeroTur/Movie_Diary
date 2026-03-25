@@ -1,16 +1,14 @@
 import fetchedPokemonList from "./modules/fetch.js";
+import { getItem } from "./modules/localStorage.js";
 
 const body = document.querySelector("body");
 const main = body.querySelector("main");
 
-let itemsStorage = [];
+let itemsStorage = getItem("catch");
 
 fetchedPokemonList
 	.then((data) => (main.innerHTML = data))
 	.catch((err) => (main.innerHTML = err));
 
-const localStorageItems = localStorage.getItem("catch");
-
-if (localStorageItems.length !== 0) {
-	itemsStorage = localStorageItems;
+if (itemsStorage.length !== 0) {
 }
