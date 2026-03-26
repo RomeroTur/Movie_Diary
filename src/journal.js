@@ -1,22 +1,42 @@
-import fetchedPokemonList from "./modules/fetch.js";
+import fetchedItems from "./modules/fetch.js";
 import { getItem } from "./modules/localStorage.js";
 
 const body = document.querySelector("body");
 const main = body.querySelector("main");
+const favContent = body.querySelector("#favContent");
 
-let itemsStorage = getItem("catch");
+let localStorageItemsArray = getItem("id");
+let fetchedItemsArray = [];
+let matchingItemsArray = [];
 
-console.log(itemsStorage);
+console.log("localStorageItemsArray:", localStorageItemsArray);
+//console.log("fetchedItems: ", fetchedItems);
 
-fetchedPokemonList
+fetchedItems
 	.then((data) => {
-		main.innerHTML = data;
-		console.log(data);
+		fetchedItemsArray = data.results;
+		console.log("fetchedItemsArray: ", fetchedItemsArray);
+		fillMatchingItemsArray();
 	})
 	.catch((err) => (main.innerHTML = err));
 
-if (itemsStorage.length !== 0) {
-	itemsStorage.map((item) => {
-		console.log("item: ", item);
-	});
+function fillMatchingItemsArray() {
+	if (localStorageItemsArray.length !== 0 && fetchedItemsArray.length !== 0) {
+		localStorageItemsArray.forEach((storageItem) => {
+			fetchedItemsArray.forEach((fetchedItem) => {
+				if (parseInt(fetchedItem.id) === parseInt(storageItem)) {
+					matchingItemsArray.push(fetchedItem);
+				}
+			});
+		});
+		console.log("matchingItemsArray: ", matchingItemsArray);
+		layoutConstruction();
+	}
+}
+
+function layoutConstruction() {
+	const layout = matchingItemsArray
+		.map((item) => `<div>${item.id}</div>`)
+		.join("");
+	favContent.innerHTML = layout;
 }

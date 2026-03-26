@@ -1,6 +1,6 @@
 function setItem() {
-	const data = ["wartortle", "squirtle", "metapod"];
-	localStorage.setItem("catch", JSON.stringify(data));
+	const data = ["875828", "687163", "83533"];
+	localStorage.setItem("id", JSON.stringify(data));
 }
 
 function getItem(key) {
