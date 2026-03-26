@@ -9,7 +9,10 @@ let itemsStorage = getItem("catch");
 console.log(itemsStorage);
 
 fetchedPokemonList
-	.then((data) => (main.innerHTML = data))
+	.then((data) => {
+		main.innerHTML = data;
+		console.log(data);
+	})
 	.catch((err) => (main.innerHTML = err));
 
 if (itemsStorage.length !== 0) {
