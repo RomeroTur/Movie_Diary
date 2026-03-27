@@ -1,0 +1,28 @@
+.movie-card__list {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6;
+}
+
+.movie-card {
+    @apply bg-gray-900 rounded-lg overflow-hidden flex flex-col;
+}
+
+.movie-card__figure {
+    @apply m-0;
+}
+
+.movie-card__img {
+    @apply block w-full h-auto;
+}
+
+.movie-card__body {
+    @apply p-3 flex flex-col gap-1;
+}
+
+.movie-card__title {
+    @apply text-sm font-semibold;
+}
+
+.movie-card__release,
+.movie-card__rating {
+    @apply text-xs text-gray-400;
+}

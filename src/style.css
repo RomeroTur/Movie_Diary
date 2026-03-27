@@ -1,1 +1,7 @@
-@import "tailwindcss";
+@reference "tailwindcss";
+
+@import "./css/layout/base.css";
+@import "./css/layout/header.css";
+@import "./css/layout/footer.css";
+
+@import "./css/components/movie-card.css";

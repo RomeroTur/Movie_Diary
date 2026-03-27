@@ -1,0 +1,13 @@
+header {
+    @apply bg-gray-900 shadow-md;
+
+    .page-inner {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+}
+
+.slogan {
+    display: block;
+}
