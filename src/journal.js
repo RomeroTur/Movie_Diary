@@ -36,7 +36,15 @@ function fillMatchingItemsArray() {
 
 function layoutConstruction() {
 	const layout = matchingItemsArray
-		.map((item) => `<div>${item.id}</div>`)
+		.map((item) => {
+			return `<div class="favContent__entry">					
+					<img src="https://image.tmdb.org/t/p/w780${item.poster_path}" />
+					<div class="p-4">
+					<div class="favContent__entry__title">${item.title}</div>
+						<div>Rating: ${item.vote_average}/10</div>
+					</div>
+				</div>`;
+		})
 		.join("");
 	favContent.innerHTML = layout;
 }

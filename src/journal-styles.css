@@ -1,0 +1,31 @@
+@theme {
+	--color-citrus: #ffe566;
+	--font-g-sans: "google-sans";
+}
+
+@font-face {
+	font-family: "google-sans";
+	src: url("./assets/fonts/GoogleSans-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "google-sans";
+	src: url("./assets/fonts/GoogleSans-Medium.ttf");
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "google-sans";
+	src: url("./assets/fonts/GoogleSans-Bold.ttf");
+	font-weight: 700;
+}
+
+.favContent__entry {
+	border: 1px solid var(--color-slate-300);
+}
+
+header {
+	background-color: var(--color-slate-800);
+	color: var(--color-white);
+}
