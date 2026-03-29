@@ -4,7 +4,29 @@
 
 .movie-card {
     @apply bg-gray-900 rounded-lg overflow-hidden flex flex-col;
+    position: relative;
+
+    .heart-icon {
+        @apply absolute top-2 right-2 cursor-pointer transition-all duration-300;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: .375rem;
+        padding: .25rem;
+        stroke: #1e3a5f;
+        fill: none;
+
+        &:hover,
+        &:focus-visible  {
+            stroke: #d31717;
+        }
+
+        &.liked {
+            stroke: #d31717;
+            fill: #d31717;
+        }
+    }
 }
+
+
 
 .movie-card__figure {
     @apply m-0;

@@ -1,5 +1,5 @@
 function setItem() {
-	const data = ["wartortle", "squirtle", "metapod"];
+	const data = [];
 	localStorage.setItem("catch", JSON.stringify(data));
 }
 
@@ -8,4 +8,16 @@ function getItem(key) {
 	return value ? JSON.parse(value) : [];
 }
 
-export { setItem, getItem };
+function toggleFavorite(id) {
+	const favorites = getItem("favorites");
+	const index = favorites.indexOf(id);
+	if (index === -1) {
+		favorites.push(id);
+	} else {
+		favorites.splice(index, 1);
+	}
+	localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+
+export { getItem, toggleFavorite };
