@@ -8,6 +8,19 @@
 <body>
 <main>
 	<div class="page-inner">
+		<form id="movie-search" role="search" action="/demos/search/">
+			<!-- Provide context for the search scope -->
+			<label for="atomic-search" class="hidden">
+				Search this Movie Database:
+			</label>
+			<input list="components" type="search" id="atomic-search">
+			<datalist id="components">
+			</datalist>
+
+			<button type="submit">
+				<span class="hidden">Search</span>
+			</button>
+		</form>
 		<div id="movie-list" class="movie-card__list"></div>
 	</div>
 </main>

@@ -1,0 +1,11 @@
+form[role="search"] {
+    @apply flex items-center gap-2 mb-8;
+}
+
+form[role="search"] input[type="search"] {
+    @apply flex-1 bg-gray-800 text-white rounded-lg px-4 py-2 outline-none border border-gray-700 focus:border-gray-500;
+}
+
+form[role="search"] button[type="submit"] {
+    @apply bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2 cursor-pointer transition-colors;
+}
